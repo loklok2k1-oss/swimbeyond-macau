@@ -1,0 +1,661 @@
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>游泳教練 - 專業游泳教學</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0ea5e9',
+                        secondary: '#0284c7',
+                    },
+                    fontFamily: {
+                        sans: ['Noto Sans TC', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            }
+            .tab-content {
+                display: none;
+            }
+            .tab-content.active {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800">
+    <!-- 導航欄 -->
+    <nav class="fixed w-full bg-white/90 backdrop-blur-sm shadow-sm z-50 transition-all duration-300">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="text-primary text-2xl font-bold">游泳教練</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#" onclick="showTab('home')" class="hover:text-primary transition-colors">首頁</a>
+                <a href="#" onclick="showTab('gear')" class="hover:text-primary transition-colors">裝備商城</a>
+                <a href="#" onclick="showTab('student')" class="hover:text-primary transition-colors">學員檔案</a>
+            </div>
+            <button class="md:hidden text-gray-700">
+                <i class="fa fa-bars text-xl"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- 首頁內容 -->
+    <div id="home-tab" class="tab-content active">
+        <!-- Hero區 -->
+        <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+            <img src="https://aka.doubaocdn.com/s/Te2x1wPWSf" alt="室內恆溫泳池" class="absolute w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black/40"></div>
+            <div class="relative z-10 text-center px-4">
+                <h1 class="text-[clamp(2rem,5vw,4rem)] font-bold text-white text-shadow mb-4">專業游泳教練<br>助你輕鬆學會游泳</h1>
+                <p class="text-[clamp(1rem,2vw,1.25rem)] text-white/90 text-shadow mb-8 max-w-2xl mx-auto">多年教學經驗，全年齡定製教學，零基礎都可以快速學識游泳</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#contact" class="bg-primary hover:bg-secondary text-white px-8 py-3 rounded-full font-medium transition-all transform hover:scale-105 shadow-lg">
+                        <i class="fa fa-calendar-check-o mr-2"></i>立即預約
+                    </a>
+                    <a href="#courses" class="bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white border border-white/50 px-8 py-3 rounded-full font-medium transition-all">
+                        <i class="fa fa-list-alt mr-2"></i>了解課程
+                    </a>
+                </div>
+            </div>
+            <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+                <a href="#about" class="text-white/80 hover:text-white">
+                    <i class="fa fa-chevron-down text-2xl"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- 關於我 -->
+        <section id="about" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-gray-900 mb-4">關於我</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">專業、耐心、負責，幫每一位學員學識游泳</p>
+                </div>
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="w-full md:w-1/2">
+                        <img src="https://aka.doubaocdn.com/s/Id1I1wPWS3" alt="教練形象" class="rounded-2xl shadow-xl w-full h-auto object-cover">
+                    </div>
+                    <div class="w-full md:w-1/2">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">專業游泳教練</h3>
+                        <p class="text-gray-600 mb-6">
+                            持證專業游泳教練、救生員，經驗豐富，專門教：小朋友怕水啟蒙、成人零基礎、泳姿修正、一對一私教。
+                        </p>
+                        <p class="text-gray-600 mb-6">
+                            教學有耐心、步驟清晰，零基礎都可以輕鬆克服怕水，短期內獨立游水。
+                        </p>
+                        <div class="grid grid-cols-2 gap-4 mb-8">
+                            <div class="flex items-center">
+                                <i class="fa fa-check-circle text-primary text-xl mr-3"></i>
+                                <span>專業教練資格</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fa fa-check-circle text-primary text-xl mr-3"></i>
+                                <span>專業救生員牌照</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fa fa-check-circle text-primary text-xl mr-3"></i>
+                                <span>少兒啟蒙經驗豐富</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fa fa-check-circle text-primary text-xl mr-3"></i>
+                                <span>成人耐心教學</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 課程服務 -->
+        <section id="courses" class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-gray-900 mb-4">課程服務</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">多種課程選擇，適合小朋友、成人、進階修正</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- 少兒啟蒙班 -->
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden transition-all hover:shadow-xl transform hover:-translate-y-2">
+                        <img src="https://aka.doubaocdn.com/s/VKjN1wPWSC" alt="少兒游泳啟蒙班" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">少兒游泳啟蒙班</h3>
+                            <p class="text-gray-600 text-sm mb-4">4-12歲零基礎，克服怕水、學水性、基礎蛙泳。</p>
+                            <div class="flex justify-between items-center">
+                                <div class="text-primary font-bold text-xl">報價請查詢</div>
+                            </div>
+                            <a href="#contact" class="mt-4 block w-full text-center bg-primary/10 hover:bg-primary/20 text-primary py-2 rounded-lg transition-colors">
+                                立即預約
+                            </a>
+                        </div>
+                    </div>
+                    <!-- 成人零基礎班 -->
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden transition-all hover:shadow-xl transform hover:-translate-y-2">
+                        <img src="https://aka.doubaocdn.com/s/k7wo1wPWSK" alt="成人零基礎班" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">成人零基礎班</h3>
+                            <p class="text-gray-600 text-sm mb-4">成人怕水都可學，快速識游、獨立泳25米。</p>
+                            <div class="flex justify-between items-center">
+                                <div class="text-primary font-bold text-xl">報價請查詢</div>
+                            </div>
+                            <a href="#contact" class="mt-4 block w-full text-center bg-primary/10 hover:bg-primary/20 text-primary py-2 rounded-lg transition-colors">
+                                立即預約
+                            </a>
+                        </div>
+                    </div>
+                    <!-- 一對一私教 -->
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden transition-all hover:shadow-xl transform hover:-translate-y-2">
+                        <img src="https://aka.doubaocdn.com/s/Id1I1wPWS3" alt="一對一私教課" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">一對一私人教學</h3>
+                            <p class="text-gray-600 text-sm mb-4">專屬定制時間、私人教學、泳姿修正、提速訓練。</p>
+                            <div class="flex justify-between items-center">
+                                <div class="text-primary font-bold text-xl">按節收費</div>
+                            </div>
+                            <a href="#contact" class="mt-4 block w-full text-center bg-primary/10 hover:bg-primary/20 text-primary py-2 rounded-lg transition-colors">
+                                立即預約
+                            </a>
+                        </div>
+                    </div>
+                    <!-- 泳姿進階班 -->
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden transition-all hover:shadow-xl transform hover:-translate-y-2">
+                        <img src="https://aka.doubaocdn.com/s/63Cc1wPWSf" alt="泳姿進階班" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">泳姿進階修正</h3>
+                            <p class="text-gray-600 text-sm mb-4">自由泳、仰泳、蝶泳進階，修正動作、節省體力。</p>
+                            <div class="flex justify-between items-center">
+                                <div class="text-primary font-bold text-xl">報價請查詢</div>
+                            </div>
+                            <a href="#contact" class="mt-4 block w-full text-center bg-primary/10 hover:bg-primary/20 text-primary py-2 rounded-lg transition-colors">
+                                立即預約
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 學員評價 -->
+        <section id="testimonials" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-gray-900 mb-4">學員評價</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">學員真實反饋</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-2xl shadow-lg">
+                        <div class="flex text-yellow-400 mb-4">
+                            <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                        </div>
+                        <p class="text-gray-600 mb-6 italic">教練好有耐心，成人怕水都可以慢慢克服，好快就學識游水。</p>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center text-primary font-bold">學員</div>
+                            <div class="ml-4">
+                                <div class="font-bold">成人學員</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-lg">
+                        <div class="flex text-yellow-400 mb-4">
+                            <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                        </div>
+                        <p class="text-gray-600 mb-6 italic">小朋友好怕水，跟教練學之後變得好鍾意落水，進步好大。</p>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center text-primary font-bold">家長</div>
+                            <div class="ml-4">
+                                <div class="font-bold">少兒家長</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-lg">
+                        <div class="flex text-yellow-400 mb-4">
+                            <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                        </div>
+                        <p class="text-gray-600 mb-6 italic">泳姿一直唔標準，經教練修正之後游得輕鬆好多。</p>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center text-primary font-bold">學員</div>
+                            <div class="ml-4">
+                                <div class="font-bold">進階學員</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 聯繫預約 -->
+        <section id="contact" class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-gray-900 mb-4">聯繫預約</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">填寫資料預約，我會盡快回覆你</p>
+                </div>
+                <div class="flex flex-col md:flex-row gap-12">
+                    <div class="w-full md:w-1/2">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">聯繫方式</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary mr-4">
+                                    <i class="fa fa-phone text-xl"></i>
+                                </div>
+                                <div>
+                                    <div class="font-bold text-gray-900">電話/微信</div>
+                                    <div class="text-gray-600">可私下聯繫查詢</div>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary mr-4">
+                                    <i class="fa fa-map-marker text-xl"></i>
+                                </div>
+                                <div>
+                                    <div class="font-bold text-gray-900">上課地點</div>
+                                    <div class="text-gray-600">澳門各大恆溫泳池</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/2">
+                        <form action="https://formsubmit.co/loklok2k1@hotmail.com" method="POST">
+                            <input type="hidden" name="_subject" value="游泳網頁新預約通知">
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="_template" value="table">
+
+                            <div class="mb-4">
+                                <label class="block text-gray-700 font-medium mb-2">姓名</label>
+                                <input type="text" name="姓名" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none" placeholder="請輸入姓名">
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-700 font-medium mb-2">聯繫電話</label>
+                                <input type="tel" name="電話" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none" placeholder="請輸入電話">
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-700 font-medium mb-2">想預約課程</label>
+                                <select name="課程" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none">
+                                    <option value="少兒游泳啟蒙班">少兒游泳啟蒙班</option>
+                                    <option value="成人零基礎班">成人零基礎班</option>
+                                    <option value="一對一私人教學">一對一私人教學</option>
+                                    <option value="泳姿進階修正">泳姿進階修正</option>
+                                </select>
+                            </div>
+                            <div class="mb-6">
+                                <label class="block text-gray-700 font-medium mb-2">備註</label>
+                                <textarea name="備註" rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none" placeholder="可寫想上課時間、年齡等"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-primary hover:bg-secondary text-white py-3 rounded-lg font-medium transition-all shadow-lg">
+                                提交預約
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 頁腳 -->
+        <footer class="bg-gray-900 text-white py-10">
+            <div class="container mx-auto px-4 text-center">
+                <div class="text-2xl font-bold mb-4">游泳教練預約頁面</div>
+                <p class="text-gray-400 mb-6">專業游泳教學 · 全年齡可報名</p>
+                <div class="text-gray-500 text-sm">© 2026 版權所有</div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- 裝備商城內容 -->
+    <div id="gear-tab" class="tab-content pt-24">
+        <div class="container mx-auto px-4 py-10">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-gray-900 mb-4">游泳裝備商城</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">專業游泳裝備，品質保證，幫你更好學習游泳</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <!-- 兒童三件套1 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden transition-all hover:shadow-xl transform hover:-translate-y-2">
+                    <img src="https://aka.doubaocdn.com/s/2TUW1wPs16" alt="兒童游泳三件套" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">兒童游泳三件套</h3>
+                        <p class="text-gray-600 text-sm mb-4">大框防霧泳鏡 + 舒適矽膠泳帽 + 兒童浮板，適合4-12歲小朋友，防水防霧，安全好用。</p>
+                        <div class="flex justify-between items-center">
+                            <div class="text-primary font-bold text-2xl">MOP 199</div>
+                        </div>
+                        <button onclick="showPaymentModal()" class="mt-4 block w-full text-center bg-primary hover:bg-secondary text-white py-3 rounded-lg transition-colors">
+                            <i class="fa fa-shopping-cart mr-2"></i>立即購買
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 兒童三件套2 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden transition-all hover:shadow-xl transform hover:-translate-y-2">
+                    <img src="https://aka.doubaocdn.com/s/LvER1wPs16" alt="可愛兒童游泳三件套" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">可愛兒童游泳三件套</h3>
+                        <p class="text-gray-600 text-sm mb-4">可愛兔子印花款，大框泳鏡 + 舒適泳帽 + 兒童浮板，小朋友最愛，安全舒適。</p>
+                        <div class="flex justify-between items-center">
+                            <div class="text-primary font-bold text-2xl">MOP 229</div>
+                        </div>
+                        <button onclick="showPaymentModal()" class="mt-4 block w-full text-center bg-primary hover:bg-secondary text-white py-3 rounded-lg transition-colors">
+                            <i class="fa fa-shopping-cart mr-2"></i>立即購買
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 成人專業泳鏡 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden transition-all hover:shadow-xl transform hover:-translate-y-2">
+                    <img src="https://aka.doubaocdn.com/s/2TUW1wPs16" alt="成人專業防霧泳鏡" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">成人專業防霧泳鏡</h3>
+                        <p class="text-gray-600 text-sm mb-4">高清防霧，防水防漏，大框不壓眼，成人專業游泳訓練適用。</p>
+                        <div class="flex justify-between items-center">
+                            <div class="text-primary font-bold text-2xl">MOP 99</div>
+                        </div>
+                        <button onclick="showPaymentModal()" class="mt-4 block w-full text-center bg-primary hover:bg-secondary text-white py-3 rounded-lg transition-colors">
+                            <i class="fa fa-shopping-cart mr-2"></i>立即購買
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 成人矽膠泳帽 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden transition-all hover:shadow-xl transform hover:-translate-y-2">
+                    <img src="https://aka.doubaocdn.com/s/LvER1wPs16" alt="成人矽膠泳帽" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">成人矽膠泳帽</h3>
+                        <p class="text-gray-600 text-sm mb-4">高彈矽膠，防水護髮，不勒頭，成人游泳必備。</p>
+                        <div class="flex justify-between items-center">
+                            <div class="text-primary font-bold text-2xl">MOP 59</div>
+                        </div>
+                        <button onclick="showPaymentModal()" class="mt-4 block w-full text-center bg-primary hover:bg-secondary text-white py-3 rounded-lg transition-colors">
+                            <i class="fa fa-shopping-cart mr-2"></i>立即購買
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 專業浮板 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden transition-all hover:shadow-xl transform hover:-translate-y-2">
+                    <img src="https://aka.doubaocdn.com/s/2TUW1wPs16" alt="專業打水浮板" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">專業打水浮板</h3>
+                        <p class="text-gray-600 text-sm mb-4">EVA材質，輕便耐用，幫助練習腿部動作，初學者必備。</p>
+                        <div class="flex justify-between items-center">
+                            <div class="text-primary font-bold text-2xl">MOP 79</div>
+                        </div>
+                        <button onclick="showPaymentModal()" class="mt-4 block w-full text-center bg-primary hover:bg-secondary text-white py-3 rounded-lg transition-colors">
+                            <i class="fa fa-shopping-cart mr-2"></i>立即購買
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 背漂輔助 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden transition-all hover:shadow-xl transform hover:-translate-y-2">
+                    <img src="https://aka.doubaocdn.com/s/LvER1wPs16" alt="兒童背漂輔助" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">兒童背漂輔助</h3>
+                        <p class="text-gray-600 text-sm mb-4">初學者輔助工具，幫助小朋友保持浮力，更快適應水中環境。</p>
+                        <div class="flex justify-between items-center">
+                            <div class="text-primary font-bold text-2xl">MOP 69</div>
+                        </div>
+                        <button onclick="showPaymentModal()" class="mt-4 block w-full text-center bg-primary hover:bg-secondary text-white py-3 rounded-lg transition-colors">
+                            <i class="fa fa-shopping-cart mr-2"></i>立即購買
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gray-50 p-8 rounded-2xl shadow-lg max-w-2xl mx-auto">
+                <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">付款方式說明</h3>
+                <div class="space-y-4 text-gray-600">
+                    <p><i class="fa fa-check-circle text-primary mr-2"></i>所有裝備付款方式：<strong>電話銀行戶口轉帳</strong></p>
+                    <p><i class="fa fa-check-circle text-primary mr-2"></i>轉帳帳戶：<strong>澳門滙豐銀行 帳號：123-456789-001</strong></p>
+                    <p><i class="fa fa-check-circle text-primary mr-2"></i>戶名：<strong>Lok Lok</strong></p>
+                    <p><i class="fa fa-check-circle text-primary mr-2"></i>轉帳完成後，請聯繫電話：<strong>0912-345-678</strong> 確認訂單</p>
+                    <p><i class="fa fa-check-circle text-primary mr-2"></i>確認收款後，24小時內安排面交或發貨</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 頁腳 -->
+        <footer class="bg-gray-900 text-white py-10">
+            <div class="container mx-auto px-4 text-center">
+                <div class="text-2xl font-bold mb-4">游泳教練預約頁面</div>
+                <p class="text-gray-400 mb-6">專業游泳教學 · 全年齡可報名</p>
+                <div class="text-gray-500 text-sm">© 2026 版權所有</div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- 學員檔案內容 -->
+    <div id="student-tab" class="tab-content pt-24">
+        <div class="container mx-auto px-4 py-10">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-gray-900 mb-4">學員教學檔案</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">輸入學員編號，即可查看教學進度與狀況，公開透明的教學進度</p>
+            </div>
+
+            <div class="max-w-xl mx-auto bg-white p-8 rounded-2xl shadow-lg mb-10">
+                <div class="flex gap-4">
+                    <input type="text" id="student-id" class="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none" placeholder="請輸入學員編號（例如：001）">
+                    <button onclick="queryStudent()" class="bg-primary hover:bg-secondary text-white px-6 py-3 rounded-lg transition-colors">
+                        <i class="fa fa-search mr-2"></i>查詢
+                    </button>
+                </div>
+                <p class="text-gray-500 text-sm mt-2 text-center">測試編號：001、002、003</p>
+            </div>
+
+            <div id="student-result" class="max-w-3xl mx-auto hidden">
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+                    <div class="bg-primary text-white p-6">
+                        <div class="flex items-center">
+                            <div id="student-avatar" class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center text-2xl font-bold mr-4"></div>
+                            <div>
+                                <h3 id="student-name" class="text-2xl font-bold"></h3>
+                                <p id="student-course" class="text-white/80"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                            <div>
+                                <div class="text-gray-500 text-sm">年齡</div>
+                                <div id="student-age" class="text-xl font-bold text-gray-900"></div>
+                            </div>
+                            <div>
+                                <div class="text-gray-500 text-sm">報名時間</div>
+                                <div id="student-date" class="text-xl font-bold text-gray-900"></div>
+                            </div>
+                            <div>
+                                <div class="text-gray-500 text-sm">目前狀態</div>
+                                <div id="student-status" class="text-xl font-bold text-primary"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 class="text-lg font-bold text-gray-900 mb-4">教學進度記錄</h4>
+                            <div id="student-progress" class="space-y-3">
+                                <!-- 進度會動態生成 -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="student-empty" class="max-w-3xl mx-auto text-center py-20">
+                <i class="fa fa-file-text-o text-6xl text-gray-300 mb-4"></i>
+                <p class="text-gray-500">請輸入學員編號查詢教學進度</p>
+            </div>
+        </div>
+
+        <!-- 頁腳 -->
+        <footer class="bg-gray-900 text-white py-10">
+            <div class="container mx-auto px-4 text-center">
+                <div class="text-2xl font-bold mb-4">游泳教練預約頁面</div>
+                <p class="text-gray-400 mb-6">專業游泳教學 · 全年齡可報名</p>
+                <div class="text-gray-500 text-sm">© 2026 版權所有</div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- 付款彈窗 -->
+    <div id="payment-modal" class="fixed inset-0 bg-black/50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-md w-full p-8">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-xl font-bold text-gray-900">購買裝備付款說明</h3>
+                <button onclick="hidePaymentModal()" class="text-gray-400 hover:text-gray-600">
+                    <i class="fa fa-times text-xl"></i>
+                </button>
+            </div>
+            <div class="space-y-4 text-gray-600">
+                <p>你選擇了購買游泳裝備，請按照以下步驟完成付款：</p>
+                <div class="bg-gray-50 p-4 rounded-lg space-y-3">
+                    <p><i class="fa fa-credit-card text-primary mr-2"></i><strong>付款方式：</strong>電話銀行戶口轉帳</p>
+                    <p><i class="fa fa-university text-primary mr-2"></i><strong>帳戶銀行：</strong>澳門滙豐銀行</p>
+                    <p><i class="fa fa-hashtag text-primary mr-2"></i><strong>帳戶號碼：</strong>123-456789-001</p>
+                    <p><i class="fa fa-user text-primary mr-2"></i><strong>戶名：</strong>Lok Lok</p>
+                </div>
+                <p><i class="fa fa-phone text-primary mr-2"></i>轉帳完成後，請聯繫電話：<strong>0912-345-678</strong> 確認訂單，我們會盡快安排交貨。</p>
+            </div>
+            <button onclick="hidePaymentModal()" class="mt-6 w-full bg-primary hover:bg-secondary text-white py-3 rounded-lg transition-colors">
+                我知道了
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // 學員數據
+        const students = {
+            "001": {
+                name: "陳小明",
+                age: 7,
+                course: "少兒游泳啟蒙班",
+                startDate: "2026-03-01",
+                progress: [
+                    "第1課：熟悉水性，克服怕水情緒",
+                    "第2課：腿部動作分解練習",
+                    "第3課：手臂動作與呼吸配合入門",
+                    "第4課：完整蛙泳動作初步練習",
+                    "第5課：呼吸節奏優化，短距離游動",
+                    "第6課：耐力練習，15米獨立游動",
+                    "第7課：轉身動作入門，25米挑戰",
+                    "第8課：鞏固動作，完成25米獨立游泳"
+                ],
+                status: "已完成課程，可獨立游泳",
+                avatar: "陳"
+            },
+            "002": {
+                name: "王麗麗",
+                age: 30,
+                course: "成人零基礎班",
+                startDate: "2026-04-10",
+                progress: [
+                    "第1課：克服怕水，適應水中環境",
+                    "第2課：腿部動作練習，打水入門",
+                    "第3課：手臂動作與呼吸練習",
+                    "第4課：完整動作配合，10米游動",
+                    "第5課：動作糾正，優化呼吸節奏",
+                    "第6課：耐力提升，25米獨立游動"
+                ],
+                status: "課程進行中，已掌握25米蛙泳",
+                avatar: "王"
+            },
+            "003": {
+                name: "李偉",
+                age: 25,
+                course: "泳姿進階修正",
+                startDate: "2026-04-20",
+                progress: [
+                    "第1課：動作評估，找出蛙泳動作問題",
+                    "第2課：核心力量糾正，調整腿部動作",
+                    "第3課：手臂動作優化，提升划水效率",
+                    "第4課：呼吸節奏調整，減少體力消耗",
+                    "第5課：自由泳入門，腿部打水練習",
+                    "第6課：自由泳手臂動作，初步配合"
+                ],
+                status: "課程進行中，蛙泳動作已修正，正在學習自由泳",
+                avatar: "李"
+            }
+        };
+
+        // Tab切換
+        function showTab(tabName) {
+            // 隱藏所有tab
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            // 顯示對應tab
+            document.getElementById(tabName + '-tab').classList.add('active');
+            // 滾動到頂部
+            window.scrollTo(0, 0);
+        }
+
+        // 查詢學員
+        function queryStudent() {
+            const id = document.getElementById('student-id').value.trim();
+            const resultDiv = document.getElementById('student-result');
+            const emptyDiv = document.getElementById('student-empty');
+
+            if (!students[id]) {
+                alert('找不到對應的學員檔案，請檢查編號是否正確');
+                return;
+            }
+
+            const student = students[id];
+            // 填充數據
+            document.getElementById('student-name').textContent = student.name;
+            document.getElementById('student-course').textContent = student.course;
+            document.getElementById('student-age').textContent = student.age + ' 歲';
+            document.getElementById('student-date').textContent = student.startDate;
+            document.getElementById('student-status').textContent = student.status;
+            document.getElementById('student-avatar').textContent = student.avatar;
+
+            // 生成進度
+            const progressDiv = document.getElementById('student-progress');
+            progressDiv.innerHTML = '';
+            student.progress.forEach((item, index) => {
+                const div = document.createElement('div');
+                div.className = 'flex items-start';
+                div.innerHTML = `
+                    <div class="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold mr-4 flex-shrink-0">${index + 1}</div>
+                    <div class="bg-gray-50 p-3 rounded-lg flex-1">${item}</div>
+                `;
+                progressDiv.appendChild(div);
+            });
+
+            // 顯示結果
+            emptyDiv.classList.add('hidden');
+            resultDiv.classList.remove('hidden');
+        }
+
+        // 付款彈窗
+        function showPaymentModal() {
+            document.getElementById('payment-modal').classList.remove('hidden');
+        }
+
+        function hidePaymentModal() {
+            document.getElementById('payment-modal').classList.add('hidden');
+        }
+
+        // 平滑滾動
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
